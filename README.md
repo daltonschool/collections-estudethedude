@@ -1,4 +1,4 @@
-H period collections assignment
+E period collections assignment
 ========================
 Complete a function for each data structure: stack, deque, list, set.
 
