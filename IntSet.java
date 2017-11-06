@@ -127,12 +127,5 @@ public class IntSet {
 			return 0;
 		}
 
-		/*
-		returns a set with only the bottom n items in the set
-		*/
-		IntSet bottom(int n) {
-
-		}
-
 }
 
