@@ -70,7 +70,10 @@ public class IntStack {
     return the item depth distance from the top
     */
     public int peek(int depth) {
-			return 0;
+    	if (top-(depth+1) < 0 || isEmpty()) {
+    		return -1;
+		}
+		return stack[top-(depth+1)];
     }
 
     /*
