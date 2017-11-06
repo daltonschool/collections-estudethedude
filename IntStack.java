@@ -5,10 +5,11 @@ public class IntStack {
 		is.push(3);
 		is.push(4);
 		is.push(5);
-		System.out.println(is.isEmpty());
+
+        System.out.println(is.isEmpty());
 		System.out.println(is.pop());
 		System.out.println(is.peek());
-	}
+    }
 	
 	
 	int[] stack;
@@ -48,8 +49,8 @@ public class IntStack {
     /*
     how large is the stack?
     */
-    public int size() {
-		return 0;
+    public int size(){
+        return top + 1;
     }
 
     /*
