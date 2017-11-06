@@ -81,8 +81,13 @@ public class IntList {
     /*
     replaceAll — replaces all occurrences of one specified value with another.
     */
-    static void replaceAll(IntList l, int rep) {
-
+    static void replaceAll(IntList l, int target, int with) {
+        for (int i = 0; i < l.size; i++) {
+            int item = l.get(i);
+            if (item == target) {
+                l.set(i, with);
+            }
+        }
     }
 
     /*

@@ -8,7 +8,6 @@ public class IntStack {
 		System.out.println(is.isEmpty());
 		System.out.println(is.pop());
 		System.out.println(is.peek());
-		is.print();
 	}
 	
 	
@@ -64,13 +63,7 @@ public class IntStack {
     print the Stack pretty-like
     */
     public void print() {
-        for(int i = top; i >= 0 ; i --){
-            if(i == top){
-                System.out.println("TOP  |  "+ stack[top]);
-            } else{
-                System.out.println("     |  "+ stack[i]);
-            }
-        }
+
     }
 
     /*
