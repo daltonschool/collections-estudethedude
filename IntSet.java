@@ -1,10 +1,16 @@
 public class IntSet {
 	public static void main(String[] args) {
 		IntSet devin = new IntSet(100);
-
-		System.out.println(devin.contains(30));
 		devin.add(30);
-		System.out.println(devin.contains(30));
+
+		//subset
+        IntSet anna = new IntSet(100);
+        anna.add(10);
+        anna.add(20);
+
+        devin.addAll(anna);
+        System.out.println(devin.contains(10));
+
 	}
 	
 	
@@ -39,8 +45,14 @@ public class IntSet {
     add all items in set s to this set.
     */
     void addAll(IntSet s) {
+        for(int i = 0; i< s.arr.length; i++){
+            if(s.arr[i] = true) {
+                arr[i] = true;
+            }
+          i++;
+            }
+        }
 
-    }
 
     /*
     remove all items from this set that are not in set s (intersection)
@@ -53,6 +65,7 @@ public class IntSet {
     remove all items in s from this set
     */
     void removeAll(IntSet s) {
+
 
     }
 
