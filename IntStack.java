@@ -5,20 +5,10 @@ public class IntStack {
 		is.push(3);
 		is.push(4);
 		is.push(5);
-
-        System.out.println(is.isEmpty());
+		System.out.println(is.isEmpty());
 		System.out.println(is.pop());
 		System.out.println(is.peek());
-
-	    //Anna's test:
-        IntStack anna = new IntStack();
-        int items = 200;
-        while(items>0) {
-            anna.push(3);
-            items --;
-        }
-        anna.push(1);
-        System.out.println(anna.pop());
+		is.print();
 	}
 	
 	
@@ -65,6 +55,7 @@ public class IntStack {
     /*
     how large is the stack?
     */
+
     public int size(){
         return top +  1;
     }
@@ -80,17 +71,20 @@ public class IntStack {
     print the Stack pretty-like
     */
     public void print() {
-
+        for(int i = top ; i >=0; i--){
+            if(i == top){
+                System.out.println("TOP    |  "+stack[i]);
+            }else{
+                System.out.println("       |  "+stack[i]);
+            }
+        }
     }
 
     /*
     return the item depth distance from the top
     */
     public int peek(int depth) {
-    	if (top-(depth+1) < 0 || isEmpty()) {
-    		return -1;
-		}
-		return stack[top-(depth+1)];
+			return 0;
     }
 
     /*

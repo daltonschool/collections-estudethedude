@@ -53,8 +53,12 @@ public class IntSet {
     remove all items in s from this set
     */
     void removeAll(IntSet s) {
-
-    }
+		for (int i = 0; i < s.arr.length; i++) {
+			if (s.arr[i]) {
+				arr[i] = false;
+			}
+		}
+	}
 
     /*
     increment every number in the set by 1

@@ -1,4 +1,21 @@
+
+
 public class IntList {
+    public static void main(String[] args){
+        IntList l = new IntList(4);
+        l.add(0,1);
+        l.add(1,2);
+        l.add(2,3);
+        l.add(3,4);
+        for (int i = 0; i < l.size; i++) {
+            System.out.println(l.get(i));
+        }
+        fill(l, 10);
+        for (int i = 0; i < l.size; i++) {
+            System.out.println(l.get(i));
+        }
+
+    }
     private int[] arr;
     int size = 0;
 
@@ -94,7 +111,9 @@ public class IntList {
     fill — overwrites every element in a List with the specified value.
     */
     static void fill(IntList l, int rep) {
-
+        for (int i = l.size; i >0; i--) {
+            l.set(i-1, rep);
+        }
     }
 
     /*
