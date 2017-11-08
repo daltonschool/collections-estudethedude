@@ -6,6 +6,11 @@ public class IntDeque {
     q = new int[defaultsize];
     head=0;
     tail=0;
+
+  }
+  public static void main(String[] args){
+    IntDeque anna = new IntDeque(100);
+    System.out.println(anna.peekLast());
   }
 
   /*
@@ -33,8 +38,10 @@ public class IntDeque {
   return the last item
   */
   public int peekLast() {
-    return 0;
+    if (head == tail) return -1;
+    return q[tail - 1];
   }
+
 
   /*
   get the first item
