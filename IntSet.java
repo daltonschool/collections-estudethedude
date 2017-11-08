@@ -10,16 +10,14 @@ public class IntSet {
 
         devin.addAll(anna);
         System.out.println(devin.contains(10));
+        System.out.println(devin.contains(30));
 
-	}
-		System.out.println(devin.contains(30));
-
-		//mean() Test Code
+        //mean() Test Code
         devin.add(10);
         devin.add(20);
         System.out.println("The average is: " + devin.mean());
+	}
 
-    }
 
 	
 	boolean[] arr;
