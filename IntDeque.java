@@ -2,6 +2,9 @@ public class IntDeque {
   int[] q;
   int head, tail;
 
+
+
+
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
     head=0;
@@ -11,6 +14,11 @@ public class IntDeque {
   public static void main(String[] args){
     IntDeque anna = new IntDeque(100);
     System.out.println(anna.peekLast());
+  }
+
+  public static void main(String[] args) {
+    IntSet devin = new IntSet(100);
+    System.out.println("Peek First: " + peekFirst);
   }
 
   /*
@@ -31,7 +39,7 @@ public class IntDeque {
   return the first item
   */
   public int peekFirst() {
-    return 0;
+    if(head == tail) return -1;
   }
 
   /*

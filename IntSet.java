@@ -12,7 +12,15 @@ public class IntSet {
         System.out.println(devin.contains(10));
 
 	}
-	
+		System.out.println(devin.contains(30));
+
+		//mean() Test Code
+        devin.add(10);
+        devin.add(20);
+        System.out.println("The average is: " + devin.mean());
+
+    }
+
 	
 	boolean[] arr;
 	
@@ -140,7 +148,12 @@ public class IntSet {
 		finds the mean of the set
 		*/
 		int mean() {
-			return 0;
+//			int average = 0;
+//			int total = 0;
+//
+//            average = total/arr.size();
+//		    return average;
+            return 0;
 		}
 
 }
