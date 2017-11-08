@@ -14,6 +14,10 @@ public class IntDeque {
   public static void main(String[] args){
     IntDeque anna = new IntDeque(100);
     System.out.println(anna.peekLast());
+
+    IntDeque corey = new IntDeque(100);
+    System.out.println(corey.peekFirst());
+
   }
 
 
@@ -36,6 +40,8 @@ public class IntDeque {
   */
   public int peekFirst() {
     if(head == tail) return -1;
+    return q[head];
+
   }
 
   /*
