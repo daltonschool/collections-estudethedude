@@ -66,7 +66,7 @@ public class IntStack {
     how large is the stack?
     */
     public int size(){
-        return top + 1;
+        return top +  1;
     }
 
     /*
