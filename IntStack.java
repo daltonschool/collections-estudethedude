@@ -57,7 +57,7 @@ public class IntStack {
     */
 
     public int size(){
-        return top +  1;
+        return top + 1;
     }
 
     /*
