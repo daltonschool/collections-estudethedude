@@ -16,10 +16,6 @@ public class IntDeque {
     System.out.println(anna.peekLast());
   }
 
-  public static void main(String[] args) {
-    IntSet devin = new IntSet(100);
-    System.out.println("Peek First: " + peekFirst);
-  }
 
   /*
   put the first item
