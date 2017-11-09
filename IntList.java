@@ -1,4 +1,4 @@
-
+import java.util.Random;
 
 public class IntList {
     public static void main(String[] args){
@@ -8,12 +8,23 @@ public class IntList {
         l.add(2,3);
         l.add(3,4);
         for (int i = 0; i < l.size; i++) {
-            System.out.println(l.get(i));
+            System.out.print(l.get(i));
         }
+
+        System.out.println();
+
+        shuffle(l);
+        for (int i = 0; i < l.size; i++) {//abbys test code
+            System.out.print(l.get(i));
+        }
+
+        System.out.println();
+
         fill(l, 10);
-        for (int i = 0; i < l.size; i++) {
+        for (int i = 0; i < l.size-1; i++) {
             System.out.println(l.get(i));
         }
+
 
     }
     private int[] arr;
@@ -71,7 +82,14 @@ public class IntList {
     shuffle — randomly permutes the elements in a List.
     */
     static void shuffle(IntList l) {
-
+        int temporary=9;
+        Random rand = new Random();
+        for (int lily = 0; lily < l.size-1; lily++) {
+            int notlily = rand.nextInt(l.size-1);
+            temporary = l.get(lily);
+            l.set(lily, l.get(notlily));
+            l.set(notlily, temporary);
+        }
     }
 
     /*
@@ -99,7 +117,7 @@ public class IntList {
     replaceAll — replaces all occurrences of one specified value with another.
     */
     static void replaceAll(IntList l, int target, int with) {
-        for (int i = 0; i < l.size; i++) {
+        for (int i = 0; i < l.size-1; i++) {
             int item = l.get(i);
             if (item == target) {
                 l.set(i, with);

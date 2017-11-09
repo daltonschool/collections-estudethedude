@@ -89,6 +89,9 @@ public class IntSet {
       for any number in set s that is in this set, multiply this set by multiplier
     */
     void multiplyAll(IntSet s, int multiplier) {
+    	for (int i = 0; i < s.arr.length; i ++) {
+
+		}
 
     }
 

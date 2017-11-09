@@ -18,6 +18,10 @@ public class IntDeque {
     IntDeque corey = new IntDeque(100);
     System.out.println(corey.peekFirst());
 
+    IntDeque abby = new IntDeque(100);
+    abby.putFirst(4);
+    System.out.println(abby.peekFirst());
+
   }
 
 
@@ -25,8 +29,14 @@ public class IntDeque {
   put the first item
   */
   public void putFirst(int item) {
-
-  }
+      if(head == 0){
+        q[q.length-1]= item;
+        head = q.length-1;
+      }
+      else{
+        q[head-1] = item;
+      }
+    }
 
   /*
   put the last item

@@ -19,6 +19,10 @@ public class IntStack {
         }
         anna.push(1);
         System.out.println(anna.pop());
+
+        //Olivia's Test:
+        System.out.println("Olivia is testing pop: " + anna.pop());
+
 	}
 	
 	
@@ -36,13 +40,13 @@ public class IntStack {
 
 	void push(int i) {
 		if(top==stack.length) resize();
-		stack[top++]=i;	 
+		stack[top++]=i;
 	}
-
+    //Olivia's Stack
 	int pop() {
-		if(!isEmpty()) return stack[--top];
-		return -1;
-  }	
+	   top--;
+	   return stack [top];
+  }
 
 	int peek() {//sometimes
 		if(!isEmpty()) return stack[top-1];	
@@ -58,7 +62,6 @@ public class IntStack {
             newArr[i] = stack[i];
             }
         stack = newArr;
-
 
     }
 
