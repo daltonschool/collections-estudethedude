@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class IntStack {
 	public static void main(String[] args) {
 		IntStack is = new IntStack();
@@ -22,6 +24,11 @@ public class IntStack {
 
         //Olivia's Test:
         System.out.println("Olivia is testing pop: " + anna.pop());
+        //Abby's test:
+        is.print();
+        is.sort();
+        System.out.println("sorted list: ");
+        is.print();
 
 	}
 	
@@ -77,8 +84,14 @@ public class IntStack {
     sort the contents of the stack
     */
     public void sort() {
-
+        int[]trimmedArr = new int[top+1];
+        for(int i = 0; i<trimmedArr.length; i++){
+            trimmedArr[i] = stack[i];
+        }
+        stack = trimmedArr;
+        Arrays.sort(stack);
     }
+
 
     /*
     print the Stack pretty-like

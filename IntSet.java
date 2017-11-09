@@ -8,6 +8,13 @@ public class IntSet {
         anna.add(10);
         anna.add(20);
 
+
+        IntSet boonk = new IntSet(100);
+        boonk.add(1);
+        boonk.add(4);
+        //testing contains all
+        System.out.println("Does anna contain anna: " + anna.containsAll(anna));
+        System.out.println("Does anna contain boonk: " + anna.containsAll(boonk));
         devin.addAll(anna);
         System.out.println(devin.contains(10));
         System.out.println(devin.contains(30));
@@ -17,8 +24,27 @@ public class IntSet {
         corey.add(10);
         corey.add(20);
         System.out.println("The mean is: " + corey.mean());
-    }
 
+        //Olivia's Test Code Multiply All
+        IntSet olivia = new IntSet(11);
+                olivia.add(5);
+                olivia.add(10);
+        IntSet newset = new IntSet(6);
+        newset.add(5);
+        olivia.multiplyAll(newset ,  2);
+        System.out.println(olivia.contains(10));
+    }
+     /*
+      for any number in set s that is in this set, multiply this set by multiplier
+    */
+    //Olivia
+    void multiplyAll(IntSet s, int multiplier) {
+        for (int i = 0; i < s.arr.length; i ++) {
+            if (contains(i)) {
+                add(i * multiplier);
+            }
+        }
+    }
 
     boolean[] arr;
 
@@ -44,7 +70,14 @@ public class IntSet {
     returns true if s is a subset of set
     */
     boolean containsAll(IntSet s) {
-        return false;
+        for(int j = 0; j < s.arr.length; j++){
+            if(s.arr[j]){
+                if(!arr[j]) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     /*
@@ -82,16 +115,6 @@ public class IntSet {
     increment every number in the set by 1
     */
     void incrementAll(IntSet s) {
-
-    }
-
-    /*
-      for any number in set s that is in this set, multiply this set by multiplier
-    */
-    void multiplyAll(IntSet s, int multiplier) {
-    	for (int i = 0; i < s.arr.length; i ++) {
-
-		}
 
     }
 
