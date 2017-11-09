@@ -96,6 +96,15 @@ public class IntList {
     reverse — reverses the order of the elements in a List.
     */
     static void reverse(IntList l) {
+        IntStack anna = new IntStack();
+        IntList reversed = new IntList(34);
+
+        for (int i = 0; i < l.size-1; i++) {//add everything to a stack
+            anna.push(l.get(i));
+        }
+        while(!anna.isEmpty()) {//add everything to a stack
+           reversed.add(anna.pop());
+        }
 
     }
 
