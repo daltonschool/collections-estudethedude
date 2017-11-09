@@ -13,8 +13,9 @@ public class IntList {
 
         System.out.println();
 
+        //abbys test code
         shuffle(l);
-        for (int i = 0; i < l.size; i++) {//abbys test code
+        for (int i = 0; i < l.size; i++) {
             System.out.print(l.get(i));
         }
 
@@ -25,6 +26,23 @@ public class IntList {
             System.out.println(l.get(i));
         }
 
+        //swap() test code
+//        int i = 0;
+//        int j = 1;
+//
+//        IntList l = new IntList(4);
+//        l.add(0,1);
+//        l.add(1,2);
+//        l.add(2,3);
+//        l.add(3,4);
+//
+//        System.out.println(l.get(i));
+//        System.out.println(l.get(j) + "\n");
+//        swap(l, i, j);
+//        System.out.println(l.get(i));
+//        System.out.println(l.get(j));
+//
+//        System.out.println();
 
     }
     private int[] arr;
@@ -110,7 +128,10 @@ public class IntList {
     swap — swaps the elements at specified positions in a List.
     */
     static void swap(IntList l, int i, int j) {
-
+        int iTemp = l.arr[i];
+        int jTemp = l.arr[j];
+        l.arr[j] = iTemp;
+        l.arr[i] = jTemp;
     }
 
     /*
@@ -140,6 +161,7 @@ public class IntList {
     static void copy(IntList l1, IntList l2) {
 
     }
+
 
     /*
     search — searches for an element in an List.
