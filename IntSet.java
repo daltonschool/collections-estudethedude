@@ -8,6 +8,13 @@ public class IntSet {
         anna.add(10);
         anna.add(20);
 
+
+        IntSet boonk = new IntSet(100);
+        boonk.add(1);
+        boonk.add(4);
+        //testing contains all
+        System.out.println("Does anna contain anna: " + anna.containsAll(anna));
+        System.out.println("Does anna contain boonk: " + anna.containsAll(boonk));
         devin.addAll(anna);
         System.out.println(devin.contains(10));
         System.out.println(devin.contains(30));
@@ -44,7 +51,14 @@ public class IntSet {
     returns true if s is a subset of set
     */
     boolean containsAll(IntSet s) {
-        return false;
+        for(int j = 0; j < s.arr.length; j++){
+            if(s.arr[j]){
+                if(!arr[j]) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     /*
