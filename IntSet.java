@@ -17,8 +17,27 @@ public class IntSet {
         corey.add(10);
         corey.add(20);
         System.out.println("The mean is: " + corey.mean());
-    }
 
+        //Olivia's Test Code Multiply All
+        IntSet olivia = new IntSet(11);
+                olivia.add(5);
+                olivia.add(10);
+        IntSet newset = new IntSet(6);
+        newset.add(5);
+        olivia.multiplyAll(newset ,  2);
+        System.out.println(olivia.contains(10));
+    }
+     /*
+      for any number in set s that is in this set, multiply this set by multiplier
+    */
+    //Olivia
+    void multiplyAll(IntSet s, int multiplier) {
+        for (int i = 0; i < s.arr.length; i ++) {
+            if (contains(i)) {
+                add(i * multiplier);
+            }
+        }
+    }
 
     boolean[] arr;
 
@@ -82,16 +101,6 @@ public class IntSet {
     increment every number in the set by 1
     */
     void incrementAll(IntSet s) {
-
-    }
-
-    /*
-      for any number in set s that is in this set, multiply this set by multiplier
-    */
-    void multiplyAll(IntSet s, int multiplier) {
-    	for (int i = 0; i < s.arr.length; i ++) {
-
-		}
 
     }
 
