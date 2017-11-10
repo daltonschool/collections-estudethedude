@@ -1,6 +1,15 @@
 public class IntSet {
     public static void main(String[] args) {
         IntSet devin = new IntSet(100);
+        IntSet lily = new IntSet(10);
+        lily.add(3);
+        lily.add(8);
+        lily.add(4);
+        lily.add(6);
+        lily.add(1);
+        lily.add(2);
+
+
         devin.add(30);
 
         //subset
@@ -33,6 +42,22 @@ public class IntSet {
         newset.add(5);
         olivia.multiplyAll(newset ,  2);
         System.out.println(olivia.contains(10));
+
+        IntSet abby = new IntSet(10);
+        abby.add(4);
+        abby.add(8);
+        abby.add(6);
+
+        System.out.println("non-incremented lily:");
+        for (int i = 0; i < 10; i++) {
+            System.out.print(i + ":" + lily.contains(i) + ", ");
+        }
+        System.out.println();
+        System.out.println("incremented lily:");
+        lily.incrementAll(abby);
+        for (int i = 0; i < 10; i++) {
+            System.out.print(i + ":" + lily.contains(i) + ", ");
+        }
     }
      /*
       for any number in set s that is in this set, multiply this set by multiplier
@@ -115,7 +140,12 @@ public class IntSet {
     increment every number in the set by 1
     */
     void incrementAll(IntSet s) {
-
+        for (int lily = 0; lily<s.arr.length ; lily++) {
+            if(s.arr[lily]){
+                this.arr[lily+1]=true;
+                this.arr[lily]=false;
+            }
+        }
     }
 
     /*
