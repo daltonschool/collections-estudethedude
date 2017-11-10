@@ -2,18 +2,41 @@ public class IntDeque {
   int[] q;
   int head, tail;
 
+
+
+
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
     head=0;
     tail=0;
+
   }
+  public static void main(String[] args){
+    IntDeque anna = new IntDeque(100);
+    System.out.println(anna.peekLast());
+
+    IntDeque corey = new IntDeque(100);
+    System.out.println(corey.peekFirst());
+
+    IntDeque abby = new IntDeque(100);
+    abby.putFirst(4);
+    System.out.println(abby.peekFirst());
+
+  }
+
 
   /*
   put the first item
   */
   public void putFirst(int item) {
-
-  }
+      if(head == 0){
+        q[q.length-1]= item;
+        head = q.length-1;
+      }
+      else{
+        q[head-1] = item;
+      }
+    }
 
   /*
   put the last item
@@ -26,15 +49,19 @@ public class IntDeque {
   return the first item
   */
   public int peekFirst() {
-    return 0;
+    if(head == tail) return -1;
+    return q[head];
+
   }
 
   /*
   return the last item
   */
   public int peekLast() {
-    return 0;
+    if (head == tail) return -1;
+    return q[tail - 1];
   }
+
 
   /*
   get the first item
