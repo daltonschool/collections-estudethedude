@@ -1,4 +1,5 @@
 
+import java.util.List;
 import java.util.Random;
 
 
@@ -48,6 +49,19 @@ public class IntList {
 //
 //        System.out.println();
 
+        //jon's test code for copy
+        IntList l1 = new IntList(4);
+        l1.add(0, 1);
+        l1.add(1, 2);
+        l1.add(2, 3);
+        l1.add(3, 4);
+        IntList l2 = new IntList(4);
+        copy(l1, l2);
+        System.out.println();
+        System.out.println(l2.get(0));
+        System.out.println(l2.get(1));
+        System.out.println(l2.get(2));
+        System.out.println(l2.get(3));
     }
 
 
@@ -219,7 +233,10 @@ public class IntList {
     copy — copies the source List into the destination List.
     */
     static void copy(IntList l1, IntList l2) {
-
+        for (int i = 0; i < l1.size; i++) {
+            int forCopy = l1.get(i);
+            l2.add(forCopy);
+        }
     }
 
 
