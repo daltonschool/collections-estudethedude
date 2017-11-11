@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class IntStack {
@@ -30,9 +31,16 @@ public class IntStack {
         System.out.println("sorted list: ");
         is.print();
 
-	}
-	
-	
+        //Jon's test:
+        IntStack jon = new IntStack();
+        int[] testArray = new int[]{24,30,36};
+        jon.push(testArray);
+        System.out.print(jon.pop() + ", ");
+        System.out.print(jon.pop() + ", ");
+        System.out.print(jon.pop());
+    }
+
+
 	int[] stack;
 	int top;
 	
@@ -127,8 +135,12 @@ public class IntStack {
     push multiple items onto the stack
     */
     public void push(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+                push(nums[i]);
+            }
 
     }
+
 
     /*
     how many [num]'s are n the stack?
