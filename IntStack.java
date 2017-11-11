@@ -33,8 +33,9 @@ public class IntStack {
 
         //Jon's test:
         IntStack jon = new IntStack();
-        int[] testArray = new int[]{24,30,36};
+        int[] testArray = new int[]{7, 24,30,36};
         jon.push(testArray);
+        System.out.print(jon.pop() + ", ");
         System.out.print(jon.pop() + ", ");
         System.out.print(jon.pop() + ", ");
         System.out.print(jon.pop());
