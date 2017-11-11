@@ -1,12 +1,16 @@
+
 import java.util.Random;
 
+
+
+
 public class IntList {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         IntList l = new IntList(4);
-        l.add(0,1);
-        l.add(1,2);
-        l.add(2,3);
-        l.add(3,4);
+        l.add(0, 1);
+        l.add(1, 2);
+        l.add(2, 3);
+        l.add(3, 4);
         for (int i = 0; i < l.size; i++) {
             System.out.print(l.get(i));
         }
@@ -22,7 +26,7 @@ public class IntList {
         System.out.println();
 
         fill(l, 10);
-        for (int i = 0; i < l.size-1; i++) {
+        for (int i = 0; i < l.size - 1; i++) {
             System.out.println(l.get(i));
         }
 
@@ -45,44 +49,46 @@ public class IntList {
 //        System.out.println();
 
     }
+
+
     private int[] arr;
     int size = 0;
 
     public IntList(int default_size) {
-      arr = new int[default_size];
+        arr = new int[default_size];
     }
 
     int get(int index) {
-      return arr[index];
+        return arr[index];
     }
 
     void set(int index, int element) {
-      arr[index] = element;
+        arr[index] = element;
     }
 
     void add(int element) {
-      arr[size++] = element;
-      if(size==arr.length) resize();
+        arr[size++] = element;
+        if (size == arr.length) resize();
     }
 
     void add(int index, int element) {
-      for(int i = size; i>index; i--) {
-        arr[i] = arr[i-1];
-      }
+        for (int i = size; i > index; i--) {
+            arr[i] = arr[i - 1];
+        }
 
-      arr[index] = element;
+        arr[index] = element;
 
-      size++;
-      if(size==arr.length) resize();
+        size++;
+        if (size == arr.length) resize();
 
     }
 
     void remove(int index) {
-      for(int i = index; i<size; i++) {
-        arr[i] = arr[i+1];
-      }
+        for (int i = index; i < size; i++) {
+            arr[i] = arr[i + 1];
+        }
 
-      size--;
+        size--;
     }
 
     void resize() {
@@ -92,18 +98,63 @@ public class IntList {
     /*
     sort — sorts a List using a merge sort algorithm, which provides a fast, stable sort. (A stable sort is one that does not reorder equal elements.)
     */
-    static void sort(IntList l) {
 
+    //Olivia
+    static void mergeSort(int[]List) {
+        if (List.length > 1) {
+            int[] firstHalf = new int[List.length / 2];
+            System.arraycopy(List, 0, firstHalf, 0, List.length / 2);
+            mergeSort(firstHalf);
+
+            int secondHalfLength = List.length - List.length / 2; //runs n times
+            int[] secondHalf = new int[secondHalfLength]; //runs n times
+            System.arraycopy(List, List.length / 2, secondHalf, 0, secondHalfLength);
+            mergeSort(secondHalf);
+
+            int[] SortedList = merge(firstHalf, secondHalf);
+            System.arraycopy(SortedList, 0, List, 0, SortedList.length);
+        }
+    }
+    private static int[] merge(int[] List1, int[] List2) {
+        int[] SortedList = new int[List1.length + List2.length];
+
+        int insidelist1 = 0;
+        int insidelist2 = 0;
+        int bothlists = 0;
+
+        while (insidelist1 < List1.length && insidelist2 < List2.length) {
+
+            if (List1[insidelist1] < List2[insidelist2])
+                SortedList[bothlists++] = List1[insidelist1++];
+            else
+                SortedList[bothlists++] = List2[insidelist2++];
+        }
+
+        while (insidelist1 < List1.length)
+            SortedList[bothlists++] = List1[insidelist1++];
+
+        while (insidelist2 < List2.length)
+            SortedList[bothlists++] = List2[insidelist2++];
+
+        return SortedList;
+        }
+        //Olivia's Test Data
+     {
+        int[] list = {2, 3, 2, 5, 6, 1, -2, 3, 14, 12};
+        mergeSort(list);
+        // System.out.println("Olivia's Test");
+        for (int i = 0; i < list.length; i++)
+            System.out.print( list[i] + " ");
     }
 
     /*
     shuffle — randomly permutes the elements in a List.
     */
     static void shuffle(IntList l) {
-        int temporary=9;
+        int temporary = 9;
         Random rand = new Random();
-        for (int lily = 0; lily < l.size-1; lily++) {
-            int notlily = rand.nextInt(l.size-1);
+        for (int lily = 0; lily < l.size - 1; lily++) {
+            int notlily = rand.nextInt(l.size - 1);
             temporary = l.get(lily);
             l.set(lily, l.get(notlily));
             l.set(notlily, temporary);
@@ -117,11 +168,11 @@ public class IntList {
         IntStack anna = new IntStack();
         IntList reversed = new IntList(34);
 
-        for (int i = 0; i < l.size-1; i++) {//add everything to a stack
+        for (int i = 0; i < l.size - 1; i++) {//add everything to a stack
             anna.push(l.get(i));
         }
-        while(!anna.isEmpty()) {//add everything to a stack
-           reversed.add(anna.pop());
+        while (!anna.isEmpty()) {//add everything to a stack
+            reversed.add(anna.pop());
         }
 
     }
@@ -147,7 +198,7 @@ public class IntList {
     replaceAll — replaces all occurrences of one specified value with another.
     */
     static void replaceAll(IntList l, int target, int with) {
-        for (int i = 0; i < l.size-1; i++) {
+        for (int i = 0; i < l.size - 1; i++) {
             int item = l.get(i);
             if (item == target) {
                 l.set(i, with);
@@ -159,8 +210,8 @@ public class IntList {
     fill — overwrites every element in a List with the specified value.
     */
     static void fill(IntList l, int rep) {
-        for (int i = l.size; i >0; i--) {
-            l.set(i-1, rep);
+        for (int i = l.size; i > 0; i--) {
+            l.set(i - 1, rep);
         }
     }
 
@@ -175,11 +226,13 @@ public class IntList {
     /*
     search — searches for an element in an List.
     */
-    static boolean search(IntList l, int i) {
+    static boolean search(IntList l) {
         return false;
     }
 
+
     /*
+
     indexOfSubList — returns the index of the first sublist of one List that is equal to another.
     */
     static int indexOfSubList(IntList l, IntList sublist) {
