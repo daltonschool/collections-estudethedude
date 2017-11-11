@@ -34,6 +34,15 @@ public class IntSet {
         corey.add(20);
         System.out.println("The mean is: " + corey.mean());
 
+        //jon's test code
+        IntSet jon = new IntSet(150);
+        jon.add(3);
+        jon.add(8);
+        jon.add(6);
+        jon.add(30);
+        jon.retainAll(devin);
+        System.out.println(jon.contains(31));
+
         //Olivia's Test Code Multiply All
         IntSet olivia = new IntSet(11);
                 olivia.add(5);
@@ -122,7 +131,11 @@ public class IntSet {
     remove all items from this set that are not in set s (intersection)
     */
     void retainAll(IntSet s) {
-
+        for (int i = 0; i < s.arr.length; i++) {
+            if (s.arr[i] = arr[i]) {
+                arr[i] = true;
+            }
+        }
     }
 
     /*
