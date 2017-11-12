@@ -24,6 +24,9 @@ public class IntDeque {
     IntDeque olivia = new IntDeque(100);
     System.out.println(olivia.getFirst());
 
+    IntDeque jon = new IntDeque(100);
+    jon.putLast(5);
+    System.out.println(jon.peekLast());
   }
 
 
@@ -43,7 +46,13 @@ public class IntDeque {
   put the last item
   */
   public void putLast(int item) {
-
+    if (tail == 0) {
+      tail = q.length;
+      q[q.length - 1] = item;
+    }
+    else  {
+      q[tail - 1] = item;
+    }
   }
 
   /*
