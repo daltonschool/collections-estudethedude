@@ -62,6 +62,22 @@ public class IntList {
         System.out.println(l2.get(1));
         System.out.println(l2.get(2));
         System.out.println(l2.get(3));
+
+        //colette's test
+        IntList test = new IntList(4);
+        test.add(0, 1);
+        test.add(1, 2);
+        test.add(2, 3);
+        test.add(3, 4);
+
+        rotate(test, 2);
+        System.out.println("The rotated list is ");
+        for(int i =0; i < test.size; i++){
+            System.out.println(test.get(i));
+        }
+
+
+
     }
 
 
@@ -194,7 +210,20 @@ public class IntList {
     /*
     rotate — rotates all the elements in a List by a specified distance.
     */
-    static void rotate(IntList l) {
+    static void rotate(IntList l, int distance) {
+        IntList temp = new IntList(l.size);
+        for(int i=0; i< l.size; i++){
+            if(i+distance >= l.size){
+                temp.set((distance-(l.size -i)), l.get(i));
+            }
+            else{
+                temp.set(i+distance, l.get(i));
+            }
+        }
+        for(int k = 0; k < l.size; k++){
+            l.set(k, temp.get(k));
+        }
+
 
     }
 
