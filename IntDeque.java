@@ -27,6 +27,12 @@ public class IntDeque {
     IntDeque jon = new IntDeque(100);
     jon.putLast(5);
     System.out.println(jon.peekLast());
+
+    //colette’s test
+    IntDeque colette = new IntDeque(100);
+    colette.putFirst(1);
+    colette.putLast(2);
+    System.out.println(colette.getLast());
   }
 
 
@@ -83,8 +89,10 @@ public class IntDeque {
   /*
   get the last item
   */
+  //colette
   public int getLast() {
-    return 0;
+    if(q.length == 0) return -1;
+    return q[tail];
   }
 
   /*
