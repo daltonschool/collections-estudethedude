@@ -77,9 +77,7 @@ public class IntDeque {
   get the first item
   */
   public int getFirst() {
-    if (head == tail)
-      return head;
-    return q[head];
+    return head;
   }
 
   /*
