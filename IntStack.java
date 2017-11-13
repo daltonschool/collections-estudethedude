@@ -34,11 +34,11 @@ public class IntStack {
         System.out.println("sorted list: ");
         is.print();
 
-<<<<<<< HEAD
+
 	}
 
 	
-=======
+
         //Jon's test:
         IntStack jon = new IntStack();
         int[] testArray = new int[]{7, 24,30,36};
@@ -50,7 +50,7 @@ public class IntStack {
     }
 
 
->>>>>>> origin/master
+
 	int[] stack;
 	int top;
 	
