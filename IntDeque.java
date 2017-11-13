@@ -51,7 +51,7 @@ public class IntDeque {
       q[q.length - 1] = item;
     }
     else  {
-      q[tail - 1] = item;
+      q[tail] = item;
     }
   }
 
