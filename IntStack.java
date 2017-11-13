@@ -40,6 +40,7 @@ public class IntStack {
         colette.push(2);
         colette.push(3);
         colette.push(4);
+        colette.push(5);
         System.out.println("Peek value: " + colette.peek());
 
 
