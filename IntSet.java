@@ -58,6 +58,19 @@ public class IntSet {
         for (int i = 0; i < 10; i++) {
             System.out.print(i + ":" + lily.contains(i) + ", ");
         }
+
+        //containsAll Test colette
+        IntSet colette = new IntSet (6);
+        colette.add(1);
+        colette.add(2);
+        colette.add(3);
+        colette.add(4);
+        colette.add(5);
+
+        IntSet subSet = new IntSet(3);
+        subSet.add(1);
+        subSet.add(2);
+        System.out.println("Colette's test " + colette.containsAll(subSet));
     }
      /*
       for any number in set s that is in this set, multiply this set by multiplier
@@ -95,13 +108,12 @@ public class IntSet {
     returns true if s is a subset of set
     */
     boolean containsAll(IntSet s) {
-        for(int j = 0; j < s.arr.length; j++){
-            if(s.arr[j]){
-                if(!arr[j]) {
-                    return false;
+        for(int j = 0; j < s.arr.length; j++) {
+                if (s.arr[j] != arr[j]) {
+                   return false;
                 }
-            }
         }
+
         return true;
     }
 
