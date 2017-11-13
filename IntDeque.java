@@ -3,15 +3,14 @@ public class IntDeque {
   int head, tail;
 
 
-
-
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
-    head=0;
-    tail=0;
+    head = 0;
+    tail = 0;
 
   }
-  public static void main(String[] args){
+
+  public static void main(String[] args) {
     IntDeque anna = new IntDeque(100);
     System.out.println(anna.peekLast());
 
@@ -22,6 +21,12 @@ public class IntDeque {
     abby.putFirst(4);
     System.out.println(abby.peekFirst());
 
+    IntDeque olivia = new IntDeque(100);
+    System.out.println(olivia.getFirst());
+
+    IntDeque jon = new IntDeque(100);
+    jon.putLast(5);
+    System.out.println(jon.peekLast());
   }
 
 
@@ -29,27 +34,32 @@ public class IntDeque {
   put the first item
   */
   public void putFirst(int item) {
-      if(head == 0){
-        q[q.length-1]= item;
-        head = q.length-1;
-      }
-      else{
-        q[head-1] = item;
-      }
+    if (head == 0) {
+      q[q.length - 1] = item;
+      head = q.length - 1;
+    } else {
+      q[head - 1] = item;
     }
+  }
 
   /*
   put the last item
   */
   public void putLast(int item) {
-
+    if (tail == 0) {
+      tail = q.length;
+      q[q.length - 1] = item;
+    }
+    else  {
+      q[tail] = item;
+    }
   }
 
   /*
   return the first item
   */
   public int peekFirst() {
-    if(head == tail) return -1;
+    if (head == tail) return -1;
     return q[head];
 
   }
@@ -67,7 +77,7 @@ public class IntDeque {
   get the first item
   */
   public int getFirst() {
-    return 0;
+    return head;
   }
 
   /*
@@ -78,6 +88,7 @@ public class IntDeque {
   }
 
   /*
+  move num items from first to last
   move num items from first to last
   */
   public void circ(int num) {
