@@ -92,7 +92,7 @@ public class IntDeque {
   //colette
   public int getLast() {
     if(q.length == 0) return -1;
-    return q[tail];
+    return q[tail -1];
   }
 
   /*
