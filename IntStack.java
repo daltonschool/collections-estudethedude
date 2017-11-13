@@ -34,10 +34,14 @@ public class IntStack {
         System.out.println("sorted list: ");
         is.print();
 
+        //colette's test
+        IntStack colette = new IntStack();
+        colette.push(1);
+        colette.push(2);
+        colette.push(3);
+        colette.push(4);
+        System.out.println("Peek value: " + colette.peek());
 
-
-
-	
 
         //Jon's test:
         IntStack jon = new IntStack();
@@ -72,7 +76,7 @@ public class IntStack {
 	   top--;
 	   return stack [top];
   }
-
+    //colette
 	int peek() {//sometimes
 		if(!isEmpty()) return stack[top-1];	
 		return -1;
