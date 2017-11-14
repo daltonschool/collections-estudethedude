@@ -33,6 +33,13 @@ public class IntDeque {
     colette.putFirst(1);
     colette.putLast(2);
     System.out.println(colette.getLast());
+
+    // studer's test
+    IntDeque studer = new IntDeque(100);
+    studer.putFirst(5);
+    studer.circ(1);
+    System.out.println("Should be 5: " + studer.peekLast());
+
   }
 
 
@@ -100,7 +107,14 @@ public class IntDeque {
   move num items from first to last
   */
   public void circ(int num) {
-
+    for (int i = 0; i < num; i++) {
+      int item = q[head];
+      head++;
+      if (head >= q.length) {
+        head = 0;
+      }
+      putLast(item);
+    }
   }
 
   /*
