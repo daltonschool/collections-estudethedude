@@ -90,6 +90,7 @@ public class IntDeque {
   get the first item
   */
   public int getFirst() {
+   if(q.length == 0) return -1;
     return head;
   }
 
