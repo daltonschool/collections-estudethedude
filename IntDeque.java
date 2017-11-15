@@ -91,7 +91,7 @@ public class IntDeque {
   */
   public int getFirst() {
    if(q.length == 0) return -1;
-    return head;
+    return q[head -1];
   }
 
   /*
